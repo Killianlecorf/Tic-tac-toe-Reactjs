@@ -1,0 +1,14 @@
+// @font-face {
+//     font-family: Verdana, Geneva, Tahoma, sans-serif ;
+//     src: url();
+// }
+
+:root{
+    --main-color : rgb(73, 44, 159) ;
+    --black-color : rgb(0, 0, 0) ;
+    --white-color : rgb(255, 255, 255) ;
+
+    --main-font : Verdana, Geneva, Tahoma, sans-serif ;
+}
+
+$main : var(--main-color)
