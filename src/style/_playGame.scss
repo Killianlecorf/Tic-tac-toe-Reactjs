@@ -14,10 +14,21 @@
         margin: 0 auto;
         border: 1px solid black;
 
-        .grid{
+        .case{
             flex-basis: 30%;
             flex-grow: 1;
+            aspect-ratio: 1 / 1;
             border: 1px solid black;
+            cursor: pointer;
+            font-family: $main-font;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .square{
+                font-size: 50px;
+                margin: 0 auto;
+            }
         }
     }
 }
