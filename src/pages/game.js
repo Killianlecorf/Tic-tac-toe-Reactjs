@@ -6,7 +6,9 @@ const game = () => {
     return (
         <div>
             <Header />
-            <PlayGame />
+            <div className='body-content'>
+                <PlayGame />
+            </div>
         </div>
     );
 };

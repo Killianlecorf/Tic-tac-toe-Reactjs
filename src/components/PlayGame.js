@@ -12,10 +12,12 @@ const PlayGame = () => {
         }else{
             setPlayer(2) 
         } 
-        return player
     }
  
     const addPlayer = (x, y) => {
+        if (board.grid[y][x]) {
+            return
+        }
         if (player === 1) {
             board.add('X' , y, x)
         }
@@ -23,6 +25,10 @@ const PlayGame = () => {
             board.add('O' , y, x)
         }
         switchPlayer()
+    }
+
+    const handleRestartGame = () => {
+        setBoard(new Board())
     }
 
     const displayCase = () => {
@@ -42,6 +48,11 @@ const PlayGame = () => {
         <div className="grid-area">
             <div className="grid-border">
                 {displayCase()}
+            </div>
+            <div className='info-area'>
+                <div className="info-content">
+                    <button onClick={ handleRestartGame }>Reset</button>
+                </div>
             </div>
         </div>
     );
