@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const header = () => {
     return (
         <div>
@@ -9,7 +8,7 @@ const header = () => {
 
                 </div>
                 <div className="title-content">
-
+                    <h1>Morpion</h1>
                 </div>
             </header>
         </div>

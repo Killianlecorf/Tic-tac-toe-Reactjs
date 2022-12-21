@@ -11,4 +11,8 @@
     --main-font : Verdana, Geneva, Tahoma, sans-serif ;
 }
 
-$main : var(--main-color)
+$main : var(--main-color);
+$black : var(--black-color);
+$white : var(--white-color);
+
+$main-font : var(--main-font);
