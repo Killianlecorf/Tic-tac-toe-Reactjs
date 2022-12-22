@@ -46,6 +46,19 @@ const PlayGame = () => {
                 </div>
         ));
     }
+    
+    const createViewVerification = (player) => {
+        
+        if (player === true) {
+            return <p>joueur { player } à gagné</p>
+        }
+        return 
+    }
+
+    const winVerification = () => {
+
+    }
+
 
     return (
         <div className="grid-area">

@@ -2,6 +2,22 @@ body{
     margin: 0 auto ;
 }
 
+label{
+    margin-bottom: 20px;
+    font-family: $main-font;
+}
+
+a{
+    text-decoration: none;
+}
+
+input{
+    margin-bottom: 20px;
+    padding: 5px 10px 5px 10px;
+    border: 2px solid $black;
+    font-size: 15px;
+}
+
 .form-area{
     display: flex;
     justify-content: center;
@@ -10,8 +26,8 @@ body{
     height: 100vh;
 
     .form-content{
-        width: 35%;
-        height: 50%;
+        width: 25%;
+        height: 60%;
         border: 2px solid black;
 
         .form-input{
@@ -21,19 +37,65 @@ body{
             align-items: center;
             width: 100%;
             height: 60%;
-            background-color: red;
+
         }
 
-        .error-content{
+        .error-area{
+            display: flex;
+            align-items: center;
+            justify-content:center ;
             width: 100%;
-            height: 20%;
-            background-color: blue;
+            height: 10%;
+
+            .error-content{
+                display: flex;
+                align-items: center;
+                justify-content:center ;
+                width: 90%;
+                height: 100%;
+                font-family: $main-font;
+                background-color: rgba(255, 0, 0, 0.356);
+                border-left: 5px solid red  ;
+            }
         }
 
         .submit-content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 100%;
             height: 20%;
-            background-color: black;
+
+            .submitButton{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: $main-font;
+                width: 100%;
+                height: 25%;
+                background-color: $main;
+                border: none;
+                color: $white;
+                padding: 15px;
+                cursor: pointer;
+                font-weight: bold;
+            }
+
+            .submitButton:hover{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: $main-font;
+                width: 100%;
+                height: 25%;
+                background-color: $main;
+                border: none;
+                color: $white;
+                padding: 15px;
+                cursor: pointer;
+                border: 2px solid $black;
+                font-weight: bold;
+            }
         }
     }
 }
