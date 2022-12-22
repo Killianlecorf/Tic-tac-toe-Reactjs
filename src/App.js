@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={ <Authentification />} />
-            <Route path="/game" element={ <Game />} />
+          <Route path="/game" element={ <Game />} />
         </Routes>
       </BrowserRouter>
     </div>

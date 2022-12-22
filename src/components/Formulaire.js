@@ -27,11 +27,21 @@ const Formulaire = () => {
     console.log();
 
     return (
-        <div>
-            <label htmlFor="">pseudo</label>
-            <input value={ input } type="text" onChange={ handleChangeUsername } />
-            <label htmlFor="">Mot de passe</label>
-            <input value={ inputPassword } type="text" onChange={ handleChangePassword } />
+        <div className='form-area' >
+            <div className="form-content">
+                <div className="form-input">
+                    <label htmlFor="">pseudo</label>
+                    <input value={ input } type="text" onChange={ handleChangeUsername } />
+                    <label htmlFor="">Mot de passe</label>
+                    <input value={ inputPassword } type="text" onChange={ handleChangePassword } />
+                </div>
+                <div className="error-content">
+
+                </div>
+                <div className="submit-content">
+                    <button >Submit</button>
+                </div>
+            </div>
             <p>username : { input }</p>
             <p>password : { inputPassword }</p>
         </div>
