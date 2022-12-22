@@ -6,6 +6,13 @@ const PlayGame = () => {
     const [player , setPlayer] = useState(1)
     const [board , setBoard] = useState(new Board())
 
+
+    const handleRestartGame = () => {
+        setBoard(new Board())
+        setPlayer(1) 
+    }
+
+
     const switchPlayer = () => {
         if (player === 2 ) {
             setPlayer(1) 
@@ -25,10 +32,6 @@ const PlayGame = () => {
             board.add('O' , y, x)
         }
         switchPlayer()
-    }
-
-    const handleRestartGame = () => {
-        setBoard(new Board())
     }
 
     const displayCase = () => {
