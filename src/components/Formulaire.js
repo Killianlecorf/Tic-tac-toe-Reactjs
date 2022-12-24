@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import PlayGame from './PlayGame';
 
 const Formulaire = () => {
 
@@ -18,32 +20,54 @@ const Formulaire = () => {
 
     const handleChangeUsername = (event) => {
         setInput(event.target.value) ;
+        return input
     }
 
     const handleChangePassword = (event) => {
         setInputPassword(event.target.value) ;
+        return inputPassword
     }
 
-    console.log();
+    const displayValidation = () => {
+        let userInputValue = input ;
+        let passwordInputValue =  inputPassword ;
+
+        if ( passwordInputValue === '4242' && userInputValue !== "") {
+            return  <NavLink to='/game'><button className='submitButton' >Submit</button> </NavLink>
+        }
+        return <NavLink to='/'><button className='submitButton' >Submit</button></NavLink>
+    }
+
+    const verificationErrorSubmit = () => {
+        let userInputValue = input ;
+        let passwordInputValue =  inputPassword ;
+
+        if (userInputValue === "" ) {
+            return <div className="error-area"><div className="error-content"><p>Ajouter un pseudo</p></div></div>
+        }
+
+        if (passwordInputValue === "") {
+            return <div className="error-area"><div className="error-content"><p>Ajouter un mot de passe </p></div></div>
+        }
+
+
+    }
+
 
     return (
         <div className='form-area' >
             <div className="form-content">
                 <div className="form-input">
                     <label htmlFor="">pseudo</label>
-                    <input value={ input } type="text" onChange={ handleChangeUsername } />
+                    <input className='inputUserValue' value={ input } type="text" onChange={ handleChangeUsername } />
                     <label htmlFor="">Mot de passe</label>
-                    <input value={ inputPassword } type="text" onChange={ handleChangePassword } />
+                    <input className='inputPasswordValue' value={ inputPassword } type="password" onChange={ handleChangePassword } />
                 </div>
-                <div className="error-content">
-
-                </div>
+                    { verificationErrorSubmit() }
                 <div className="submit-content">
-                    <button >Submit</button>
+                { displayValidation() }
                 </div>
             </div>
-            <p>username : { input }</p>
-            <p>password : { inputPassword }</p>
         </div>
     );
 };
