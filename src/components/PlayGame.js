@@ -12,6 +12,13 @@ const PlayGame = () => {
         setPlayer(1) 
     }
 
+    const handleChangeInput = (event) => {
+        let test = event.target.value
+        let ParseEvent = parseInt(test);
+        setPlayer(ParseEvent);
+        handleRestartGame()
+        }
+        console.log(player);
 
     const switchPlayer = () => {
         if (player === 1 ) {
@@ -126,6 +133,12 @@ const PlayGame = () => {
                     </div>
                     <div className="win-para">
                         {createViewVerification(player)}
+                    </div>
+                    <div className="select-content">
+                        <select onChange={ handleChangeInput } >
+                            <option value="1">Joueur 1</option>
+                            <option value="2">Joueur 2</option>
+                        </select>
                     </div>
                 </div>
             </div>
