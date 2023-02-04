@@ -55,7 +55,7 @@ const PlayGame = () => {
 
     const addPlayer = (x, y) => {
 
-        let isWin = winVerification()
+        let isWin = winVerification(y, x)
 
         if (isWin === false) {
             if (player === 1) {
@@ -71,23 +71,6 @@ const PlayGame = () => {
             setGameState({...gameState, isWin } )
             return
         }
-        
-
-        // if (player === 1) {
-        //     board.add('X' , y, x)
-        // }
-        // if (player === 2) {
-        //     board.add('O' , y, x)
-        // }
-
-        // let isWin = winVerification()
-
-        // if (isWin === true) {
-        //     setGameState({...gameState, isWin } )
-        //     return
-        // }
-    
-        // switchPlayer()
 
     }
 
@@ -159,26 +142,88 @@ const PlayGame = () => {
         }
     }
 
-    const handleChangeCasesize = () => {
+    const handleChangeCasesize = (event) => {
 
-        if (winSize === 3) {
+        const handleSize =  parseInt(event.target.value)
+
+        if (handleSize === 4) {
             setwinSize(4)
         }
-        if (winSize === 3) {
-            setwinSize(4)
+        if (handleSize === 3) {
+            setwinSize(3)
         }
 
     }
 
-    const winVerification = () => {
+    
+
+    let winVerification = (posY, posX) => {
+
+        let chainSize = 0
+
+        for (let x = 0; x < boardSize; x++) {
+
+            if ((board.grid[posY][x] === 'X' && player === 2) || (board.grid[posY][x] === 'O' && player === 1)) {
+                chainSize++
+            }else{
+                chainSize = 0
+            }
+            
+            if (winSize === chainSize) {
+                return true 
+            }
+            
+        }
+
+        // VERTICAL
+
+        chainSize = 0
+        for (let x = 0; x < boardSize; x++) {
+            chainSize = 0
+            for (let y = 0; y < boardSize; y++) {
+                
+                if ((board.grid[y][posX] === 'X' && player === 2) || (board.grid[y][posX] === 'O' && player === 1)) {
+                    chainSize++
+                }else{
+                    chainSize = 0
+                }
+                
+                if (winSize === chainSize) {
+                    return true 
+                }
+            }
+        }
         
-        // d=0
-
-        // for (let y = 0; y < sizeWin; y++) {
+        chainSize = 0
+        for (let x = 0; x < boardSize; x++) {
+            if ((board.grid[x][x] === 'X' && player === 2) || (board.grid[x][x] === 'O' && player === 1)) {
+                chainSize++
+            }else{
+                chainSize = 0
+            }
             
-            
-        // }
+            if (winSize === chainSize) {
+                return true 
+            }
+        }
 
+        chainSize = 0
+        let limite = boardSize -1
+        for (let x = limite; x >= 0; x--) {
+            
+            if ((board.grid[limite-x][x] === 'X' && player === 2) || (board.grid[limite-x][x] === 'O' && player === 1)) {
+                chainSize++
+            }else{
+                chainSize = 0
+            }
+            
+            if (winSize === chainSize) {
+                return true 
+            }
+        }
+        chainSize = 0
+
+        return false
     }
 
     return (
