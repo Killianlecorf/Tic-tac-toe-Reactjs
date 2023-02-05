@@ -35,3 +35,16 @@ const winVerification = () => {
 
         return false
     }
+
+    // const size = 3
+        // let d = 0
+        // for (let y = 0; x < size; y++) {
+        //     for (let x = 0; x < size; x++) {
+        //         if (board.grid[y][x] === 3) {
+
+        //             d++
+        //         }else{
+        //             d=0
+        //         }
+        //     }
+        // }
