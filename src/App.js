@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename='/tictactoe'>
         <Routes>
           <Route exact path="/" element={ <Authentification />} />
           <Route path="/game" element={ <Game />} />
